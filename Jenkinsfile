@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build web-ext firefox extension') {
       steps {
-        sh 'web-ext build /home/tobin/ducky/'
+        sh 'web-ext build /root/ducky/'
       }
     }
   }
