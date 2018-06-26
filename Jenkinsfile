@@ -4,7 +4,7 @@ pipeline {
     stage('build web-ext firefox extension') {
       steps {
         sh 'whoami'
-        sh 'web-ext build -s /root/ducky/'
+        sh 'web-ext build'
       }
     }
   }
