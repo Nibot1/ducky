@@ -12,7 +12,7 @@ pipeline {
         }
         stage('build chrome extension') {
           steps {
-            sh 'google-chrome --pack-extension=./ --pack-extension-key=/root/ducky.pem'
+            sh 'google-chrome-stable --pack-extension=./ --pack-extension-key=/root/ducky.pem'
             archiveArtifacts(artifacts: '../ducky.crx', onlyIfSuccessful: true)
           }
         }
