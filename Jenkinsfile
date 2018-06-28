@@ -13,9 +13,7 @@ pipeline {
         stage('build chrome extension') {
           steps {
             sh 'google-chrome-stable --headless --pack-extension=./ --pack-extension-key=/root/ducky.pem'
-            sh 'pwd'
-            sh '$ find / -name \'*.crx\''
-            archiveArtifacts(artifacts: '../ducky.crx', onlyIfSuccessful: true)
+            archiveArtifacts(artifacts: 'ducky.crx', onlyIfSuccessful: true)
           }
         }
       }
