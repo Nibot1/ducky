@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('build web-ext firefox extension') {
+    stage('build extension') {
       parallel {
         stage('build web-ext firefox extension') {
           steps {
@@ -12,7 +12,7 @@ pipeline {
         }
         stage('build chrome extension') {
           steps {
-            sh 'google-chrome-stable --headless --disable-gpu --pack-extension=./ --pack-extension-key=/root/ducky.pem'
+            sh 'google-chrome-stable --headless --disable-gpu --disable-software-rasterizer --pack-extension=./ --pack-extension-key=/root/ducky.pem'
             archiveArtifacts(artifacts: 'ducky.crx', onlyIfSuccessful: true)
           }
         }
