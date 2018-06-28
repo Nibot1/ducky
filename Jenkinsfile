@@ -12,6 +12,8 @@ pipeline {
         }
         stage('build chrome extension') {
           steps {
+            sh 'sudo Xvfb :1 -screen 0 1024x768x24 </dev/null &'
+            sh 'export DISPLAY=":1"'
             sh 'google-chrome-stable --pack-extension=./ --pack-extension-key=/root/ducky.pem'
             archiveArtifacts(artifacts: '../ducky.crx', onlyIfSuccessful: true)
           }
