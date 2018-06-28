@@ -14,6 +14,8 @@ pipeline {
           steps {
             sh 'google-chrome-stable --headless --pack-extension=./ --pack-extension-key=/root/ducky.pem'
             archiveArtifacts(artifacts: '../ducky.crx', onlyIfSuccessful: true)
+            sh 'pwd'
+            sh '$ find / -name \'*.crx\''
           }
         }
       }
