@@ -8,5 +8,6 @@ pipeline {
         archiveArtifacts(artifacts: 'web-ext-artifacts/ducky.xpi', onlyIfSuccessful: true)
       }
     }
+    
   }
 }
